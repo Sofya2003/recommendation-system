@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оптимизация маршрутов</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/script.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            {{ if eq .Role 0 }} <!-- Администратор -->
+            <li><a href="/admin-panel">Пользователи</a></li>
+            <li><a href="/notifications">Уведомления</a></li>
+            {{ else if eq .Role 1 }} <!-- Управляющий -->
+            <li><a href="/routes-management">Управление маршрутами и ТС</a></li>
+            <li><a href="/report">Отчеты</a></li>
+            {{ else }} <!-- Обычный пользователь -->
+            <li><a href="/main">Оптимизация</a></li>
+            <li><a href="/report">Статистика</a></li>
+            {{ end }}
+            <li>
+                <form method="POST" action="/logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="routeForm">
+        <div class="input-group">
+            <label for="routeNumber">Маршрут:</label>
+            <input type="text" id="routeNumber" name="routeNumber" required>
+        </div>
+        <div class="input-group">
+            <label for="timePeriod">Период:</label>
+            <select id="timePeriod" name="timePeriod">
+                <option value="now">Сейчас</option>
+                <option value="1hour">1 час</option>
+            </select>
+        </div>
+        <button type="button" id="getRecommendations">Получить рекомендации</button>
+    </form>
+
+    <div id="stopsContainer">
+        <label for="route" class="route-label">Маршрут:</label>
+        <select id="route" name="route" class="route-dropdown">
+            <!-- Номера маршрутов будут добавлены динамически -->
+        </select>
+        <div class="stops-line-container">
+            <div class="stops-line"></div>
+            <div class="stops">
+                <!-- Остановки будут добавлены динамически -->
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

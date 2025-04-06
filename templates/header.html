@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+        {{ if eq .Role 0 }} <!-- Администратор -->
+        <li><a href="/admin-panel">Пользователи</a></li>
+        <li><a href="/notifications">Уведомления</a></li>
+        {{ else if eq .Role 1 }} <!-- Управляющий -->
+        <li><a href="/routes-management">Управление маршрутами и ТС</a></li>
+        <li><a href="/report">Отчеты</a></li>
+        {{ else }} <!-- Обычный пользователь -->
+        <li><a href="/main">Оптимизация</a></li>
+        <li><a href="/report">Статистика</a></li>
+        {{ end }}
+        <li>
+            <form method="POST" action="/logout">
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+    </ul>
+</nav>

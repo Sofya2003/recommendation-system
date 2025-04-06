@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 60px;
+    background-color: #454B52;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    max-width: 400px;
+    width: 100%;
+    color: white;
+    margin: auto;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: #FA9E96;
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+/* Форма */
+form {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    max-width: 600px;
+    width: 100%;
+}
+
+/*form label {*/
+/*    font-weight: bold;*/
+/*}*/
+
+form input, form select {
+    padding: 8px;
+    border: 1px solid black;
+    width: 105px;
+    height: 40px;
+}
+
+form button {
+    background-color: #5BB76C;
+    border: none;
+    cursor: pointer;
+    width: 270px;
+    height: 35px;
+}
+
+form button:hover {
+    background-color: #4a9c5a;
+}
+
+/* Остановки */
+#stopsContainer {
+    margin: 20px;
+}
+
+.stops-line-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.stops-line {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: relative;
+}
+
+.stops {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 10px;
+}
+
+.stop {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.stop.green {
+    background-color: #5BB76C;
+}
+
+.stop.yellow {
+    background-color: #FFD700;
+}
+
+.stop.red {
+    background-color: #FF6347;
+}
+
+.route-label {
+    width: 70px;
+}
+
+select.route-dropdown {
+    width: 70px;
+    height: 30px;
+    padding-left: 7px;
+    margin-bottom: 20px;
+}
